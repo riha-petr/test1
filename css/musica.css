@@ -1,0 +1,434 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+* { margin: 0; padding: 0; }
+
+header {
+  margin: 0; padding: 0; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+    width:100%;
+    height: 100%;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header {
+    position: relative;
+}
+
+@font-face {
+  font-family: viking;
+  src: url('../shrifts/VikingNormal-36VL.otf');
+}
+
+@font-face {
+  font-family: viking-strong;
+  src: url('../shrifts/Nordicablack-Xa39.otf');
+}
+
+.header_inner{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.layer {
+   background: url('../img/boat-main.jpg') no-repeat center center;
+   background-size: cover; 
+   width: 100%;
+   height: 1075px;
+   background-position: 10% 100%;
+}
+
+.layer .block {
+    text-align: center;
+    position: absolute;
+    left: 54%;
+    right: 0;
+    top: 51%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    background: #3b3c3b;
+    height: fit-content;
+}
+
+.block h2 {
+    color: #fbfbfb;
+    font-size: 45px;
+    transition-delay: 0.5s;
+    font-family: 'viking-strong', serif;
+    letter-spacing: 2px;
+}
+
+.block h2:hover{
+    color: #d0c9c9;
+    cursor: pointer;
+}
+
+.navigation{
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo {
+    position: relative;
+    left: -7%;
+    top: 2%;
+}
+
+.logo span {
+    color: #000;
+    transition-delay: 0.5s;
+    font-family: 'viking', serif;
+    font-size: 30px;
+}
+
+.logo span:hover {
+    color: #4c1515;
+    cursor: pointer;
+}
+
+.items {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  display:inline-block;
+  vertical-align:top;
+  position: relative;
+  left: 7%;
+}
+
+.items li {
+    float: left;
+    margin-right: 20px;
+    position: relative;
+    top: -3%;
+}
+
+.items li a {
+    color: #000;
+    transition-delay: 0.5s;
+    font-family: 'viking', serif;
+    font-size: 18px;
+}
+
+.items li a:hover {
+    color: #4c1515;
+}
+
+#cars {
+  width: auto !important;
+}
+
+.admin {
+    opacity: 0;
+    font-family: 'viking', serif;
+}
+
+.admin:hover {
+    color: #fff;
+    opacity: 1.0;
+}
+
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0.4;}
+  100% { opacity:1; }
+}
+
+@-o-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+
+.musicaplayersection {
+    width: 534px;
+    position: relative;
+    height: 300px;
+    background: none;
+    top: 25%;
+    left: 14%;
+}
+
+.active {
+  color: #ca2c2c !important;
+}
+
+.musica-section {
+  background: #c1d3e2;
+}
+
+.musica-wrapper {
+  margin: 0 auto;
+  max-width: 70%;
+}
+
+.boxed-content {
+  height: fit-content;
+    position: relative;
+    left: 25%;
+    max-width: 70%;
+}
+
+.boxed-content h2 {
+  padding-top: 50px
+}
+
+.boxed-content img {
+  margin-top: 30px;
+}
+
+.song-box {
+  width: 600px;
+  height: 100px;
+  background: green;
+  margin-top: 34px;
+}
+
+.descr {
+  margin-top: 30px;
+}
+
+.boxed {
+  width: fit-content;
+}
+
+.footer {
+   color: #fff;
+   background: #1a3c5a;
+   padding: 53px;
+}
+
+.copyright {
+  background: #f4f4f4;
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: #006300;
+}
+
+.footer-content {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 19px;
+}
+
+.boxing {
+  width: 25%;
+  margin-left: 139px;
+  border-left: 4px solid #eaeaea;
+  font-family: viking-strong;
+}
+
+.boxing ul li:hover {
+  cursor: pointer;
+  color: #f4f4f4f4;
+}
+
+.descr:last-of-type {
+  padding-bottom: 50px;
+}
+
+.player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 320px;
+  height: 480px;
+  overflow: hidden;
+}
+.player .main {
+  width: 100%;
+  height: 100%;
+  background: #222;
+  transition:all 500ms ease-in-out;
+}
+.player .main .thumbnail img {
+  width: 100%;
+}
+.player .main .seekbar {
+  margin-top: -15px;
+}
+.player .main .seekbar input[type="range"] {
+  -webkit-appearance:none;
+  width: 100%;
+  height: 4px;
+  outline: none;
+  background: #aaa;
+  overflow: hidden;
+}
+.player .main .seekbar input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width: 0px;
+  height: 0px;
+  box-shadow: -300px 0px 0px 300px #00acee;
+}
+.player .main .details {
+  text-align: center;
+  padding: 15px 0px;
+}
+.player .main .details h2 {
+  font-size: 18px;
+  color:#eee;
+  margin-bottom: 5px;
+}
+.player .main .details p {
+  font-size: 15px;
+  color: #aaa;
+}
+.player .main .controls {
+  display: flex;
+  justify-content: center;
+  margin:8px 0px;
+}
+.player .main .controls > div {
+  margin:0px 30px;
+  cursor: pointer;
+}
+.player .main .controls i.fa {
+  font-size:25px;
+  color: #ddd;
+}
+.player .main .controls > div.play-pause-control i.fa-play {
+  display: none;
+}
+.player .main .controls > div.play-pause-control.paused i.fa-play {
+  display: block;
+}
+.player .main .controls > div.play-pause-control.paused i.fa-pause {
+  display: none;
+}
+.player .player-list {
+  position: absolute;
+  width: 100%;
+  margin-top:-20px;
+  height: 350px;
+  overflow-y: scroll;
+  background: rgba(0,0,0,0.8);
+  z-index:2;
+  transition:all 500ms ease-in-out;
+}
+.player .player-list .toggle-list {
+  position: sticky;
+  top:0px;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  background: #555;
+}
+.player .player-list .toggle-list i.fa {
+  color: #ccc;
+  font-size: 20px;
+  font-weight: 600;
+}
+.player .player-list .toggle-list i.fa-angle-down {
+  display: none;
+}
+.player .player-list .toggle-list.active i.fa-angle-up {
+  display: block;
+}
+.player .player-list .toggle-list.active i.fa-angle-down {
+  display: none;
+}
+.player .list {
+  padding: 10px;
+}
+.player .list .item {
+  display: flex;
+  padding: 5px 0px;
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+}
+.player .list .item .thumbnail {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+.player .list .thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+.player .list .item .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 10px;
+}
+.player .list .item .details h2 {
+  color: #eee;
+  font-size: 16px;
+}
+.player .list .item .details p {
+  color: #aaa;
+  font-size: 15px;
+}
+.player .player-list::-webkit-scrollbar {
+  width: 5px;
+  background: #222;
+}
+.player .player-list::-webkit-scrollbar-thumb {
+  background: #00acee;
+}
+.player.activeSongList .player-list {
+  margin-top: -350px;
+}
+.player.activeSongList .main {
+  filter:blur(5px);
+}
