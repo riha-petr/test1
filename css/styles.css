@@ -918,6 +918,18 @@ input[type=submit]:hover {
   color: #f4f4f4f4;
 }
 
+.boxing {
+  width: 25%;
+  margin-left: 139px;
+  border-left: 4px solid #eaeaea;
+  font-family: viking-strong;
+}
+
+.boxing ul li:hover {
+  cursor: pointer;
+  color: #f4f4f4f4;
+}
+
 .quiz {
    background: #1a3c5a;
 }

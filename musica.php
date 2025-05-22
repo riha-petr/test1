@@ -11,35 +11,9 @@
 	<link rel="stylesheet" type="text/css" href="css/musica.css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-	<header>
-		<div class="header_inner">
-			<div class="navigation">
-				<div class="logo">
-					<span>NordicMann band</span>
-				</div>
-				<div class="menu-items">
-                                        <ul class="items">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a class="active" href="musica.html">Musica</a></li>
-                                                <li><a href="albums.html">Albums</a></li>
-                                                <li><a href="poetry.html">Poetry</a></li>
-                                                <li><a href="register.html">Register</a></li>
-                                                <li><a href="signin.html">Sign in</a></li>
-                                                <li><a href="donation.html">Donation</a></li>
-						<select name="cars" id="cars">
-						    <option value="volvo">Eng</option>
-						    <option value="saab">Swe</option>
-						    <option value="opel">Nor</option>
-						    <option value="audi">Pol</option>
-						    <option value="audi">Rus</option>
-  						</select>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="layer">
-				<div class="musicaplayersection">
+<?php include 'header.php'; ?>
+        <div class="layer">
+                                <div class="musicaplayersection">
 				    <div class="player">
 						<div class="main">
 							<audio></audio>
@@ -82,9 +56,8 @@
 					</h2>
 				</div>
 		</div>
-	</header>
-	
-	<section class="music-section">
+
+        <section class="music-section">
 		<div class="musica-wrapper">
 			<div class="boxed">
 				<div class="boxed-content">
@@ -341,5 +314,4 @@
 		});
 		loadSong(currentSongIndex);
 	</script>
-</body>
-</html>
+<?php include 'footer.php'; ?>

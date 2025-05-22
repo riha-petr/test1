@@ -12,33 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/albums.css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-	<header>
-		<div class="header_inner">
-			<div class="navigation">
-				<div class="logo">
-					<span>NordicMann band</span>
-				</div>
-				<div class="menu-items">
-                                        <ul class="items">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="musica.html">Musica</a></li>
-                                                <li><a class="active" href="albums.html">Albums</a></li>
-                                                <li><a href="poetry.html">Poetry</a></li>
-                                                <li><a href="register.html">Register</a></li>
-                                                <li><a href="signin.html">Sign in</a></li>
-                                                <li><a href="donation.html">Donation</a></li>
-						<select name="cars" id="cars">
-						    <option value="volvo">Eng</option>
-						    <option value="saab">Swe</option>
-						    <option value="opel">Nor</option>
-						    <option value="audi">Pol</option>
-						    <option value="audi">Rus</option>
-  						</select>
-					</ul>
-				</div>
-			</div>
-		</div>
+<?php include 'header.php'; ?>
 		<div class="layer">
 				<div class="musicaplayersection">
 					Music player here with playlist
@@ -49,7 +23,6 @@
 					</h2>
 				</div>
 		</div>
-	</header>
 	
 	<section class="music-section">
 		<div class="musica-wrapper" onscroll="myFunc();">
@@ -141,43 +114,10 @@
 		</div>
 	</section>
 
-	<section class="footer">
-		<div class="footer-content">
-			<div class="boxing">
-				<ul>
-					<li>Home</li>
-					<li>Music</li>
-					<li>Poetry</li>
-					<li>Register</li>
-				</ul>
-			</div>
-			<div class="boxing">
-				<ul>
-					<li>Sign in</li>
-					<li>Donation</li>
-				</ul>
-			</div>
-			<div class="boxing">
-				<ul>
-					<li>About us</li>
-					<li>Contact us</li>
-					<li>Location</li>
-				</ul>
-			</div>
-			<div class="boxing">
-				<ul>
-					<li><i class="fa-3x fa fa-twitter"></i></li>
-					<li class="fa-3x fa fa-youtube"></li>
-					<li><i class="fa-3x fa fa-bandcamp"></i></li>
-				</ul>
-			</div>
-		</div>
-	</section>
 	<script type="text/javascript">
 		function myFunc() {
 			console.log(1);
 		}
 	</script>
 	<script src="js/albums_main.js"></script>
-</body>
-</html>
+<?php include 'footer.php'; ?>
