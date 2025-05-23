@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <?php include 'header.php'; ?>
-        <main class="content" style="padding:40px;">
+        <main class="content">
                 <h1>Register</h1>
 
                 <?php if ($message): ?>

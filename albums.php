@@ -14,8 +14,9 @@
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <?php include 'header.php'; ?>
-<h1 style="text-align:center;margin:20px 0;">Albums</h1>
-        <div class="album-grid">
+<main class="content">
+    <h1 style="text-align:center;margin:20px 0;">Albums</h1>
+    <div class="album-grid">
 <?php
 require 'database.php';
 $stmt = $pdo->query("SELECT id, title, cover_url FROM albums ORDER BY created_at DESC");
@@ -29,7 +30,8 @@ foreach ($stmt as $album): ?>
 <?php endforeach; ?>
         </div>
 
-	<script type="text/javascript">
+    </main>
+    <script type="text/javascript">
 		function myFunc() {
 			console.log(1);
 		}

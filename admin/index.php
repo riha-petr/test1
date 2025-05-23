@@ -27,6 +27,7 @@ try {
     <title>Admin Dashboard</title>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 <?php include 'header.php'; ?>
 <div class="admin-container">
