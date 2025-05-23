@@ -1,4 +1,42 @@
-<?php require 'database.php'; ?>
+<?php
+require 'database.php';
+
+$errors = [];
+$message = '';
+$username = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim($_POST['username'] ?? '');
+    $password = $_POST['password'] ?? '';
+    $confirm  = $_POST['confirm'] ?? '';
+
+    if ($username === '' || $password === '' || $confirm === '') {
+        $errors[] = 'All fields are required.';
+    } elseif ($password !== $confirm) {
+        $errors[] = 'Passwords do not match.';
+    } else {
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        try {
+            $stmt = $pdo->prepare(
+                'INSERT INTO users (username, password, role) VALUES (:username, :password, :role)'
+            );
+            $stmt->execute([
+                ':username' => $username,
+                ':password' => $hash,
+                ':role' => 'user'
+            ]);
+            $message = 'Registration successful.';
+            $username = '';
+        } catch (PDOException $e) {
+            if ($e->getCode() === '23000') {
+                $errors[] = 'Username already exists.';
+            } else {
+                $errors[] = 'Database error: ' . $e->getMessage();
+            }
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +53,35 @@
 <?php include 'header.php'; ?>
         <main class="content" style="padding:40px;">
                 <h1>Register</h1>
-                <p>
-                        This page will contain a registration form in the future.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+
+                <?php if ($message): ?>
+                    <p class="success"><?php echo htmlspecialchars($message); ?></p>
+                <?php endif; ?>
+
+                <?php if ($errors): ?>
+                    <ul class="errors">
+                        <?php foreach ($errors as $err): ?>
+                            <li><?php echo htmlspecialchars($err); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+
+                <form method="post" action="register.php">
+                        <div>
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" required>
+                        </div>
+                        <div>
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required>
+                        </div>
+                        <div>
+                                <label for="confirm">Confirm Password</label>
+                                <input type="password" id="confirm" name="confirm" required>
+                        </div>
+                        <div>
+                                <button type="submit">Register</button>
+                        </div>
+                </form>
         </main>
 <?php include 'footer.php'; ?>
