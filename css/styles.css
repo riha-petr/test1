@@ -967,3 +967,21 @@ input[type=submit]:hover {
 }
 /****/
 
+
+.admin-nav {
+    background: #333;
+    padding: 10px;
+}
+.admin-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.admin-nav li {
+    margin-right: 10px;
+}
+.admin-nav a {
+    color: #fff;
+    text-decoration: none;
+}
