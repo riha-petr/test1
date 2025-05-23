@@ -61,9 +61,13 @@ header {
 
 .header_inner{
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.9);
+    opacity: 1;
     height: fit-content;
-    position: absolute;
-    opacity: 0.5;
 }
 
 .layer {
@@ -1147,6 +1151,6 @@ form button:hover {
 /* Page content spacing */
 main.content {
     padding: 40px;
-    padding-top: 100px;
+    padding-top: 200px;
 }
 

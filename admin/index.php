@@ -45,7 +45,7 @@ try {
             <tr>
                 <td><?php echo htmlspecialchars($user['username']); ?></td>
                 <td><?php echo htmlspecialchars($user['role']); ?></td>
-                <td><a href="edit_user.php?id=<?php echo $user['id']; ?>">Edit</a></td>
+                <td><a class="action-link" href="edit_user.php?id=<?php echo $user['id']; ?>"><i class="fa fa-pencil"></i></a></td>
             </tr>
             <?php endforeach; ?>
         </tbody>
