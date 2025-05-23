@@ -28,12 +28,14 @@ $songs = $stmt->fetchAll();
 <head>
     <meta charset="utf-8">
     <title>Manage Songs</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 <?php include 'header.php'; ?>
+<div class="admin-container">
 <h1>Songs for <?php echo htmlspecialchars($album['title']); ?></h1>
-<p><a href="add_song.php?album_id=<?php echo $album['id']; ?>" class="button">Add Song</a></p>
+<p><a href="add_song.php?album_id=<?php echo $album['id']; ?>" class="button"><i class="fa fa-plus"></i> Add Song</a></p>
 <table class="admin-table">
     <thead>
         <tr>
@@ -47,9 +49,10 @@ $songs = $stmt->fetchAll();
         <tr>
             <td><?php echo htmlspecialchars($song['title']); ?></td>
             <td><?php echo htmlspecialchars($song['file_url']); ?></td>
-            <td><a href="delete_song.php?album_id=<?php echo $album_id; ?>&id=<?php echo $song['id']; ?>">Delete</a></td>
+            <td><a class="action-link" href="delete_song.php?album_id=<?php echo $album_id; ?>&id=<?php echo $song['id']; ?>" onclick="return confirm('Delete song?')"><i class="fa fa-trash"></i></a></td>
         </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
+</div>
 <?php include 'footer.php'; ?>

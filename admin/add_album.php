@@ -25,10 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="utf-8">
     <title>Add Album</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 <?php include 'header.php'; ?>
+<div class="admin-container">
 <h1>Add Album</h1>
 <?php if ($message): ?><p class="error"><?php echo htmlspecialchars($message); ?></p><?php endif; ?>
 <form method="post" action="add_album.php">
@@ -42,4 +44,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <button type="submit">Create</button>
 </form>
+</div>
 <?php include 'footer.php'; ?>

@@ -86,3 +86,12 @@ form button {
 form button:hover {
     background: #006799;
 }
+
+.action-link {
+    margin-right: 8px;
+    color: #0073aa;
+}
+
+.action-link:hover {
+    color: #006799;
+}
