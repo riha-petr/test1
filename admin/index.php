@@ -4,6 +4,15 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header('Location: ../signin.php');
     exit;
 }
+
+require '../database.php';
+
+try {
+    $stmt = $pdo->query("SELECT id, username, role FROM users");
+    $users = $stmt->fetchAll();
+} catch (Exception $e) {
+    die('Failed to fetch users: ' . $e->getMessage());
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +24,23 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 </head>
 <body>
     <h1>Admin Dashboard</h1>
-    <p>Welcome, administrator. This is a placeholder dashboard.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($users as $user): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($user['username']); ?></td>
+                <td><?php echo htmlspecialchars($user['role']); ?></td>
+                <td><a href="edit_user.php?id=<?php echo $user['id']; ?>">Edit</a></td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </body>
 </html>
