@@ -12,7 +12,7 @@
                         <li><a href="albums.php">Albums</a></li>
                         <li><a href="poetry.php">Poetry</a></li>
                         <li><a href="register.php">Register</a></li>
-                        <li><a href="signin.php">Sign in</a></li>
+                        <li><a href="/admin/index.php">Sign in</a></li>
                         <li><a href="donation.php">Donation</a></li>
                         <select name="cars" id="cars">
                             <option value="volvo">Eng</option>
