@@ -25,6 +25,18 @@ $createAlbums = "CREATE TABLE IF NOT EXISTS albums (
 
 $pdo->exec($createAlbums);
 
+// Songs table linked to albums
+$createSongs = "CREATE TABLE IF NOT EXISTS songs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    album_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    file_url VARCHAR(255) NOT NULL,
+    lyrics TEXT DEFAULT NULL,
+    FOREIGN KEY (album_id) REFERENCES albums(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+
+$pdo->exec($createSongs);
+
 // Add new profile columns if they don't exist
 function columnExists(PDO $pdo, string $table, string $column): bool {
     $stmt = $pdo->prepare("SELECT COUNT(*) FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = ? AND COLUMN_NAME = ?");

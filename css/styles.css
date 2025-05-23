@@ -1111,3 +1111,35 @@ form button:hover {
 .button:hover {
     background: #006799;
 }
+
+/* Album grid on frontend */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.album-card {
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+.song-list {
+    list-style: none;
+    padding: 0;
+}
+
+.song-item {
+    margin-bottom: 20px;
+}
+
+.song-item audio {
+    width: 100%;
+}
+
+.lyrics {
+    white-space: pre-wrap;
+    margin: 10px 0;
+}

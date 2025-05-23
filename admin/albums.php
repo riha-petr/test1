@@ -24,6 +24,7 @@ $albums = $stmt->fetchAll();
         <tr>
             <th>Title</th>
             <th>Cover</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -33,6 +34,10 @@ $albums = $stmt->fetchAll();
             <td><?php if ($album['cover_url']): ?>
                 <img src="<?php echo htmlspecialchars($album['cover_url']); ?>" style="max-width:100px">
                 <?php endif; ?>
+            </td>
+            <td>
+                <a href="album_songs.php?album_id=<?php echo $album['id']; ?>">Songs</a> |
+                <a href="delete_album.php?id=<?php echo $album['id']; ?>" onclick="return confirm('Delete album?')">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>
