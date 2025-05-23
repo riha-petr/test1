@@ -27,36 +27,19 @@
 	
 	<section class="music-section">
 		<div class="musica-wrapper" onscroll="myFunc();">
-			<div class="wrappa">
-				<div class="insider">
-					<h2>Name of album</h2>
-					<img src="https://unsplash.it/400">
-				</div>
-				<div class="insider">
-					<h2>Name of album</h2>
-					<img src="https://unsplash.it/400">
-				</div>
-				<div class="insider">
-					<h2>Name of album</h2>
-					<img src="https://unsplash.it/400">
-				</div>
-				<div class="insider">
-					<h2>Name of album</h2>
-					<img src="https://unsplash.it/400">
-				</div>
-				<div class="insider">
-					<h2>Name of album</h2>
-					<img src="https://unsplash.it/400">
-				</div>
-				<div class="insider">
-					<h2>Name of album</h2>
-					<img src="https://unsplash.it/400">
-				</div>
-				<div class="insider">
-					<h2>Name of album</h2>
-					<img src="https://unsplash.it/400">
-				</div>
-			</div>
+                        <div class="wrappa">
+<?php
+require 'database.php';
+$stmt = $pdo->query("SELECT title, cover_url FROM albums ORDER BY created_at DESC");
+foreach ($stmt as $album): ?>
+                                <div class="insider">
+                                        <h2><?php echo htmlspecialchars($album['title']); ?></h2>
+                                        <?php if ($album['cover_url']): ?>
+                                        <img src="<?php echo htmlspecialchars($album['cover_url']); ?>">
+                                        <?php endif; ?>
+                                </div>
+<?php endforeach; ?>
+                        </div>
 			<!--<div class="boxed">
 				<div class="boxed-content">
 				
