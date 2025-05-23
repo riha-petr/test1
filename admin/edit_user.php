@@ -47,7 +47,7 @@ if (!$user) {
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <?php include 'header.php'; ?>
-<main class="content" style="padding:40px;">
+<div class="admin-container">
     <h1>Edit User</h1>
     <?php if ($message): ?>
         <p class="success"><?php echo htmlspecialchars($message); ?></p>
@@ -67,5 +67,5 @@ if (!$user) {
         </div>
         <button type="submit">Save</button>
     </form>
-</main>
+</div>
 <?php include 'footer.php'; ?>
