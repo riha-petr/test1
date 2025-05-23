@@ -1,23 +1,7 @@
 <?php
 // Simple database initialization script
-
-// Update these settings to match your local database configuration
-$host = 'localhost';
-$dbname = 'travelapp';
-$user = 'root';
-$pass = '';
-
-$dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-];
-
-try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (PDOException $e) {
-    die('Connection failed: ' . $e->getMessage());
-}
+// Requires database.php for the PDO connection
+require 'database.php';
 
 // Create tables
 $createUsers = "CREATE TABLE IF NOT EXISTS users (
