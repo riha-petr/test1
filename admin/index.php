@@ -29,8 +29,9 @@ try {
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <?php include 'header.php'; ?>
+<div class="admin-container">
     <h1>Admin Dashboard</h1>
-    <table>
+    <table class="admin-table">
         <thead>
             <tr>
                 <th>Username</th>
@@ -48,4 +49,5 @@ try {
             <?php endforeach; ?>
         </tbody>
     </table>
+</div>
 <?php include 'footer.php'; ?>

@@ -11,8 +11,13 @@
                         <li><a href="musica.php">Musica</a></li>
                         <li><a href="albums.php">Albums</a></li>
                         <li><a href="poetry.php">Poetry</a></li>
-                        <li><a href="register.php">Register</a></li>
-                        <li><a href="signin.php">Sign in</a></li>
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                            <li><a href="admin/index.php">Admin</a></li>
+                            <li><a href="admin/logout.php">Logout</a></li>
+                        <?php else: ?>
+                            <li><a href="register.php">Register</a></li>
+                            <li><a href="signin.php">Sign in</a></li>
+                        <?php endif; ?>
                         <li><a href="donation.php">Donation</a></li>
                         <select name="cars" id="cars">
                             <option value="volvo">Eng</option>

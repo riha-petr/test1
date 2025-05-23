@@ -969,7 +969,7 @@ input[type=submit]:hover {
 
 
 .admin-nav {
-    background: #333;
+    background: #23282d;
     padding: 10px;
 }
 .admin-nav ul {
@@ -984,4 +984,77 @@ input[type=submit]:hover {
 .admin-nav a {
     color: #fff;
     text-decoration: none;
+}
+
+body.admin-body {
+    background: #f1f1f1;
+    font-family: sans-serif;
+}
+
+/* Admin area container */
+.admin-container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+}
+
+.admin-container h1 {
+    margin-bottom: 20px;
+}
+
+.admin-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-container th,
+.admin-container td {
+    padding: 8px;
+    border-bottom: 1px solid #e1e1e1;
+    text-align: left;
+}
+
+/* Form styles */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #005177;
+}
+
+@media (max-width: 600px) {
+    .admin-nav ul {
+        flex-direction: column;
+    }
 }
