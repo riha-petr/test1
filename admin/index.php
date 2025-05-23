@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['user_id'])) {
     header('Location: ../signin.php');
     exit;
 }
@@ -8,8 +8,14 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 require '../database.php';
 
 try {
-    $stmt = $pdo->query("SELECT id, username, role FROM users");
-    $users = $stmt->fetchAll();
+    if ($_SESSION['role'] === 'admin') {
+        $stmt = $pdo->query("SELECT id, username, role FROM users");
+        $users = $stmt->fetchAll();
+    } else {
+        $stmt = $pdo->prepare("SELECT id, username, role FROM users WHERE id = ?");
+        $stmt->execute([$_SESSION['user_id']]);
+        $users = $stmt->fetchAll();
+    }
 } catch (Exception $e) {
     die('Failed to fetch users: ' . $e->getMessage());
 }
@@ -22,7 +28,7 @@ try {
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
-<body>
+<?php include 'header.php'; ?>
     <h1>Admin Dashboard</h1>
     <table>
         <thead>
@@ -42,5 +48,4 @@ try {
             <?php endforeach; ?>
         </tbody>
     </table>
-</body>
-</html>
+<?php include 'footer.php'; ?>
