@@ -6,6 +6,19 @@ if (!isset($_SESSION['user_id'])) {
 }
 require '../database.php';
 
+$message = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_album'])) {
+    $title = trim($_POST['title'] ?? '');
+    $cover = trim($_POST['cover_url'] ?? '');
+    if ($title !== '') {
+        $stmt = $pdo->prepare("INSERT INTO albums (title, cover_url) VALUES (:title, :cover)");
+        $stmt->execute([':title' => $title, ':cover' => $cover]);
+        $message = 'Album added';
+    } else {
+        $message = 'Title is required.';
+    }
+}
+
 $stmt = $pdo->query("SELECT id, title, cover_url FROM albums ORDER BY created_at DESC");
 $albums = $stmt->fetchAll();
 ?>
@@ -21,7 +34,21 @@ $albums = $stmt->fetchAll();
 <?php include 'header.php'; ?>
 <div class="admin-container">
 <h1>Albums</h1>
-<p><a href="add_album.php" class="button"><i class="fa fa-plus"></i> Add Album</a></p>
+<?php if ($message): ?>
+    <p class="success"><?php echo htmlspecialchars($message); ?></p>
+<?php endif; ?>
+<form class="add-form" method="post" action="albums.php">
+    <input type="hidden" name="add_album" value="1">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+    </div>
+    <div>
+        <label for="cover_url">Cover URL</label>
+        <input type="text" id="cover_url" name="cover_url">
+    </div>
+    <button type="submit">Add Album</button>
+</form>
 <table class="admin-table">
     <thead>
         <tr>

@@ -95,3 +95,11 @@ form button:hover {
 .action-link:hover {
     color: #006799;
 }
+
+.add-form {
+    margin-bottom: 20px;
+}
+
+.add-form div {
+    margin-bottom: 10px;
+}

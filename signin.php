@@ -36,7 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <?php include 'header.php'; ?>
-        <main class="content">
+        <main class="content auth-container">
+            <div class="auth-box">
                 <h1>Sign in</h1>
                 <?php if ($error): ?>
                     <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
@@ -52,5 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <button type="submit">Sign in</button>
                 </form>
+            </div>
         </main>
 <?php include 'footer.php'; ?>
