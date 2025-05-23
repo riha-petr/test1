@@ -1152,7 +1152,6 @@ form button:hover {
 /* Page content spacing */
 main.content {
     padding: 40px;
-    padding-top: 120px;
 }
 
 /* Auth forms */
