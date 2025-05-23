@@ -11,8 +11,13 @@
                         <li><a href="musica.php">Musica</a></li>
                         <li><a href="albums.php">Albums</a></li>
                         <?php if (isset($_SESSION['user_id'])): ?>
-                            <li><a href="admin/index.php">Admin</a></li>
-                            <li><a href="admin/logout.php">Logout</a></li>
+                            <li class="dropdown">
+                                <a href="#">Account</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="admin/index.php">Admin</a></li>
+                                    <li><a href="admin/logout.php">Logout</a></li>
+                                </ul>
+                            </li>
                         <?php else: ?>
                             <li><a href="register.php">Register</a></li>
                             <li><a href="signin.php">Sign in</a></li>
