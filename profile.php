@@ -9,21 +9,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $userId = $_SESSION['user_id'];
-$message = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nickname = $_POST['nickname'] ?? null;
-    $aboutMe = $_POST['about_me'] ?? null;
-
-    $stmt = $pdo->prepare('UPDATE users SET nickname = :nickname, about_me = :about_me WHERE id = :id');
-    $stmt->execute([
-        ':nickname' => $nickname,
-        ':about_me' => $aboutMe,
-        ':id' => $userId
-    ]);
-
-    $message = 'Profile updated.';
-}
 
 $stmt = $pdo->prepare('SELECT nickname, about_me FROM users WHERE id = :id');
 $stmt->execute([':id' => $userId]);
@@ -42,21 +27,9 @@ $user = $stmt->fetch();
 <?php include 'header.php'; ?>
 <main class="content">
     <h1>Profile</h1>
-    <?php if ($message): ?>
-        <p class="success"><?php echo htmlspecialchars($message); ?></p>
-    <?php endif; ?>
-    <form method="post" action="profile.php">
-        <div>
-            <label for="nickname">Nickname</label>
-            <input type="text" id="nickname" name="nickname" value="<?php echo htmlspecialchars($user['nickname'] ?? ''); ?>">
-        </div>
-        <div>
-            <label for="about_me">About Me</label>
-            <textarea id="about_me" name="about_me" rows="5"><?php echo htmlspecialchars($user['about_me'] ?? ''); ?></textarea>
-        </div>
-        <div>
-            <button type="submit">Save</button>
-        </div>
-    </form>
+    <p><strong>Nickname:</strong> <?php echo htmlspecialchars($user['nickname'] ?? ''); ?></p>
+    <p><strong>About Me:</strong></p>
+    <p><?php echo nl2br(htmlspecialchars($user['about_me'] ?? '')); ?></p>
+    <p><a href="admin/edit_user.php?id=<?php echo $userId; ?>" class="button">Edit Profile</a></p>
 </main>
 <?php include 'footer.php'; ?>
