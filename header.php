@@ -10,7 +10,6 @@
                         <li><a href="index.php">Home</a></li>
                         <li><a href="musica.php">Musica</a></li>
                         <li><a href="albums.php">Albums</a></li>
-                        <li><a href="poetry.php">Poetry</a></li>
                         <?php if (isset($_SESSION['user_id'])): ?>
                             <li><a href="admin/index.php">Admin</a></li>
                             <li><a href="admin/logout.php">Logout</a></li>
