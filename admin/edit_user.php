@@ -45,6 +45,7 @@ if (!$user) {
     <meta charset="utf-8">
     <title>Edit User</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 <?php include 'header.php'; ?>
 <div class="admin-container">

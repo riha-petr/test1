@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <?php include 'header.php'; ?>
-        <main class="content" style="padding:40px;">
+        <main class="content">
                 <h1>Donation</h1>
                 <p>
                         Support our project by making a donation. Lorem ipsum dolor sit amet,

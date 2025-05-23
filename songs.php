@@ -20,6 +20,7 @@ if ($albumId) {
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <?php include 'header.php'; ?>
+<main class="content">
 <h1 style="text-align:center;margin:20px 0;">Songs</h1>
 <form method="get" action="songs.php" style="text-align:center;margin-bottom:20px;">
     <label for="album_id">Select album:</label>
@@ -43,4 +44,5 @@ if ($albumId) {
     <?php endforeach; ?>
 </ul>
 <?php endif; ?>
+</main>
 <?php include 'footer.php'; ?>

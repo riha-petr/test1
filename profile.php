@@ -40,7 +40,7 @@ $user = $stmt->fetch();
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <?php include 'header.php'; ?>
-<main class="content" style="padding:40px;">
+<main class="content">
     <h1>Profile</h1>
     <?php if ($message): ?>
         <p class="success"><?php echo htmlspecialchars($message); ?></p>
