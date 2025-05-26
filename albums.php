@@ -21,12 +21,14 @@
 require 'database.php';
 $stmt = $pdo->query("SELECT id, title, cover_url FROM albums ORDER BY created_at DESC");
 foreach ($stmt as $album): ?>
-                <article class="album-card">
-                    <?php if ($album['cover_url']): ?>
-                    <img src="<?php echo htmlspecialchars($album['cover_url']); ?>" alt="Album cover">
-                    <?php endif; ?>
-                    <h2><?php echo htmlspecialchars($album['title']); ?></h2>
-                </article>
+                <a href="songs.php?album_id=<?php echo $album['id']; ?>" class="album-link">
+                    <article class="album-card">
+                        <?php if ($album['cover_url']): ?>
+                        <img src="<?php echo htmlspecialchars($album['cover_url']); ?>" alt="Album cover">
+                        <?php endif; ?>
+                        <h2><?php echo htmlspecialchars($album['title']); ?></h2>
+                    </article>
+                </a>
 <?php endforeach; ?>
         </div>
 
