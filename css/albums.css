@@ -63,12 +63,7 @@ header {
   src: url('../shrifts/Nordicablack-Xa39.otf');
 }
 
-.header_inner{
-    width: 100%;
-    height: fit-content;
-    position: absolute;
-    opacity: 0.5;
-}
+
 
 .layer {
    background: url('../img/boat-main.jpg') no-repeat center center;
