@@ -267,7 +267,7 @@
 		function loadSong(songIndex){
 			let song = songList[songIndex];
 			main.thumbnail.setAttribute("src","./img/"+song.thumbnail);
-			document.body.style.background = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("./files/${song.thumbnail}") center no-repeat`;
+                        document.body.style.background = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("./img/${song.thumbnail}") center no-repeat`;
 			document.body.style.backgroundSize = "cover";	
 			main.songname.innerText = song.songname;
 			main.artistname.innerText = song.artistname;
